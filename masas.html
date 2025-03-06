@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="masas.css" />
+        <title>Document</title>
+    </head>
+
+    <body class="contenedor">
+        <div id="primero" class="item">
+            <header class="header">
+                <div class="logo">
+                    <img src="pizza-logo.png" alt="logo de pizza" />
+                </div>
+                <nav>
+                    <ul class="nav-link">
+                        <li><a class="links" href="...">Inicio</a></li>
+                        <li><a class="links" href="...">Masas</a></li>
+                        <li><a class="links" href="...">Salsas</a></li>
+                        <li><a class="links" href="...">Quesos</a></li>
+                    </ul>
+                </nav>
+                <a class="btn" href="..."><button>Contacto</button></a>
+
+                <a onclick="openNav()" href="#"
+                    class="menu"><button>Menú</button></a>
+
+                <div class="overlay" id="mobile-menu">
+                    <a onclick="closeNav()" href class="close">&times;</a>
+                    <div class="overlay-content">
+                        <a href="#">Inicio</a>
+                        <a href="#">Masas</a>
+                        <a href="#">Salsas</a>
+                        <a href="#">Quesos</a>
+                        <a href="#">Contacto</a>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <div id="segundo" class="item">
+            <div class="card">
+                <img
+                    src="masa-de-pizza-napolitana.jpg"
+                    class="card-img-top"
+                    alt="..." />
+
+                <div class="card-body">
+                    <h4 class="card-title"><mark>Pizza Napolitana</mark></h4>
+                    <p class="card-text">
+                        La masa para una pizza napolitana tradicional lleva
+                        pocos ingredientes, pero la clave está en la calidad y
+                        el proceso de fermentación. Aquí están los ingredientes
+                        básicos:
+                    </p>
+                    <ul>
+                        <li>Harina de trigo (tipo 00): 1 kg</li>
+                        <li>Agua : 600 ml</li>
+                        <li>Sal : 25 g</li>
+                        <li>Levadura fresca : 3 g (o levadura seca : 1 g)
+                            Ayuda a que la masa fermente y desarrolle su textura
+                            aireada.</li>
+                        <li>Opcional: Aceite de oliva virgen extra : 10-15
+                            ml</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Preparación</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="tercero" class="item">
+            <div class="card">
+                <img src="masa-de-pizza-fugazzeta.jpg" class="card-img-top"
+                    alt="..." />
+
+                <div class="card-body">
+                    <h4 class="card-title"><mark>Pizza Fugazzeta</mark></h4>
+                    <p class="card-text">La masa para pizza fugazzeta argentina
+                        es similar a la de la pizza tradicional, pero suele ser
+                        más esponjosa y con una miga más aireada. Aquí tienes
+                        los ingredientes básicos:
+                    </p>
+                    <ul>
+                        <li>Harina de trigo 000 – 1 kg</li>
+                        <li>Agua tibia – 550 ml</li>
+                        <li>Levadura fresca – 10</li>
+                        <li>Sal – 20 g</li>
+                        <li>Aceite de oliva o girasol – 50 ml</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Preparación</a>
+                </div>
+            </div>
+        </div>
+        <div id="cuarto" class="item">
+            <div class="card">
+                <img src="masa-de-pizza-chicago.jpg" class="card-img-top"
+                    alt="..." />
+
+                <div class="card-body">
+                    <h4 class="card-title"><mark>Pizza Chicago</mark></h4>
+                    <p class="card-text">
+                        La pizza estilo Chicago o deep-dish pizza tiene una masa
+                        gruesa, crujiente y con un ligero toque hojaldrado. A
+                        diferencia de otras masas, lleva más grasa (generalmente
+                        aceite o manteca) y se hornea en un molde alto, parecido
+                        a un pastel.
+                    </p>
+                    <ul>
+                        <li>Harina de trigo (000 o 0000) – 500 g</li>
+                        <li>Agua tibia – 300 ml</li>
+                        <li>Levadura seca – 7 g (o levadura fresca – 20 g)</li>
+                        <li>Sal – 10 g (1 cucharadita)</li>
+                        <li>Azúcar – 10 g (1 cucharadita) (mejora la fermentación y el color de la masa)</li>
+                        <li>Aceite de oliva o vegetal – 80 ml</li> 
+                        <li>Manteca derretida – 50 g (da una textura hojaldrada y crujiente)</li>                       
+                    </ul>
+                    <a href="#" class="btn btn-primary">Preparación</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="quinto" class="item">
+            <footer class="footer">
+                <p class="footer-content">
+                    &copy; 2025 Margherita Pizza´s. Todos los derechos
+                    reservados.
+                </p>
+                <p class="footer-content">
+                    Visítanos para más recetas e historias sobre la pizza.
+                </p>
+            </footer>
+        </div>
+
+        <script type="text/javascript" src="masas.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+    </body>
+</html>
