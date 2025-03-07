@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous" />
     <link rel="stylesheet" href="index.css">
     <title>Margherita Pizza´s</title>
 </head>
@@ -17,10 +22,11 @@
             </div>
             <nav>
                 <ul class="nav-link">
-                    <li><a class="links" href="...">Inicio</a></li>
-                    <li><a class="links" href="...">Masas</a></li>
-                    <li><a class="links" href="...">Salsas</a></li>
-                    <li><a class="links" href="...">Quesos</a></li>
+                    <li><a class="links" href="index.html">Inicio</a></li>
+                    <li><a class="links" href="masas.html">Masas</a></li>
+                    <li><a class="links" href="salsas.html">Salsas</a></li>
+                    <li><a class="links" href="quesos.html">Quesos</a></li>
+                    
                 </ul>
             </nav>
             <a class="btn" href="..."><button>Contacto</button></a>
@@ -28,7 +34,8 @@
             <a onclick="openNav()" href="#" class="menu"><button>Menú</button></a>
 
             <div class="overlay" id="mobile-menu">
-                <a onclick="closeNav()" href class="close">&times;</a>
+                <a onclick="closeNav()" href="javascript:void(0);" class="close" aria-label="Cerrar menú">&times;</a>
+
                 <div class="overlay-content">
                     <a href="#">Inicio</a>
                     <a href="#">Masas</a>
@@ -75,20 +82,30 @@
     </div>
 
     <div id="cuarto" class="item">
+        <br>
         <h2>En esta página</h2>
+        <br>
         <p> podrás encontrar una completa variedad de recursos para adentrarse en el delicioso mundo de las pizzas,
             explorar recetas detalladas de masas, salsas y quesos, perfectas para crear combinaciones únicas y
             sabrosas en tu propia cocina. Además, te invitamos a descubrir la fascinante historia de la pizza, desde sus
             orígenes hasta convertirse en el plato icónico que es hoy en día. Cada sección está diseñada para inspirarte
             y brindarte las herramientas necesarias para convertirte en un experto.</p>
     </div>
+
     <div id="quinto" class="item">
         <footer class="footer">
-            <p class="footer-content">&copy; 2025 Margherita Pizza´s. Todos los derechos reservados.</p>
-            <p class="footer-content">Visítanos para más recetas e historias sobre la pizza.</p>
+            <div class="footer-content">
+                <p>&copy; 2025 Margherita Pizza´s. Todos los derechos reservados.</p>
+                <p>Visítanos para más recetas e historias sobre la pizza.</p>
+            </div>
         </footer>
-    </div>
+        
+    </div>    
 
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
     <script type="text/javascript" src="inicio.js"></script>
 </body>
 

@@ -66,14 +66,20 @@
 }
 
 
+
+
+
 /*Grid Responsivo*/
+
+
 @media(max-width: 800px) {
     .contenedor {
         display: grid;
         background-color: rgb(255, 255, 220);
-        grid-template-columns: 1fr ;
-        grid-template-rows: auto auto auto auto auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 3fr 3fr 3fr 1fr;
         gap: 20px;
+        text-align: center;
     }
 
     #segundo {
@@ -83,41 +89,49 @@
     }
 
     #tercero {
-        display: grid;
         background-color: rgb(185, 120, 120);
-        grid-row: 3/4 ;
+        grid-row: 3/4;
         grid-column: 1;
     }
-    
+
     #cuarto {
         background-color: rgb(206, 43, 55);
         grid-row: 4/5;
         grid-column: 1;
     }
-    #quinto {
-        background-color: rgb(0, 48, 87);
-        grid-row: 5/6;
-        grid-column: 1;
+
+    #segundo, #tercero, #cuarto{
+        width: 90%; /* Evita que ocupen todo el ancho */
+        margin: 10px auto; /* Centra los elementos */
+        transform: none !important;
+        /* Eliminar transformaciones */
+        position: relative;
+        /* Establece la posición relativa para evitar desplazamientos */
+        left: 0 !important;
+        /* Eliminar cualquier desplazamiento */
+        top: 0 !important;
+        /* Eliminar cualquier desplazamiento */
+        right: 0 !important;
+        /* Eliminar cualquier desplazamiento */
+        bottom: 0 !important;
+        /* Eliminar cualquier desplazamiento */
     }
 
-    #segundo,
-    #cuarto {
-        transform: none !important; /* Eliminar transformaciones */
-        position: relative; /* Establece la posición relativa para evitar desplazamientos */
-        left: 0 !important; /* Eliminar cualquier desplazamiento */
-        top: 0 !important; /* Eliminar cualquier desplazamiento */
-        right: 0 !important; /* Eliminar cualquier desplazamiento */
-        bottom: 0 !important; /* Eliminar cualquier desplazamiento */
+    #quinto{
+        grid-row: auto;
+    }
 }
 
 
-/*Inicio.css*/
+/*Header*/
+
+
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 10%;
+    padding: 10px 5%;
 }
 
 .header .logo img {
@@ -172,6 +186,8 @@
 
 /*Fin Header*/
 
+
+
 /*Header Responsivo*/
 .header .menu {
     display: none;
@@ -193,51 +209,22 @@
     background-color: rgb(0, 48, 87);
     color: white;
     transform: scale(1.2);
+
+}
+
+@media screen and (max-width: 800px) {
+
+    .header .nav-link,
+    .btn {
+        display: none;
+    }
+
+    .header .menu {
+        display: inherit;
+    }
 }
 
 
-/* Estilos adicionales para el overlay (por si se usa en dispositivos grandes) */
-.header a {
-    text-decoration: none;
-}
-
-.header .overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    background-color: rgba(163, 163, 163, 0.9);
-    overflow: hidden;
-    transition: all 0.3s ease 0s;
-}
-
-.header .overlay .overlay-content {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.header .overlay a {
-    padding: 15px;
-    font-size: 36px;
-    display: block;
-    transition: all 0.3s ease 0s;
-    font-weight: 600;
-    color: rgb(0, 48, 87);
-}
-
-.header .overlay .close {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 65px;
-    color: white;
-    cursor: pointer;
-}
 
 /*Overlay del Menu*/
 
@@ -287,9 +274,10 @@
     font-size: 65px;
     color: white;
     cursor: pointer;
+
 }
 
-@media screen and (max-height: 450px) {
+@media screen and (max-height :450px) {
     .header .overlay a {
         font-size: 20px;
     }
@@ -299,9 +287,8 @@
         top: 15px;
         right: 35px;
     }
-}
 
-/*Fin Header Respónsivo*/
+}
 
 /*Breve Sintaxis*/
 
@@ -346,4 +333,3 @@
 }
 
 /*Fin del footer*/
-}
