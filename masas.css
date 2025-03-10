@@ -21,8 +21,6 @@
 }
 
 
-
-
 /*Contenedores*/
 
 #primero {
@@ -52,6 +50,20 @@
     background-color: rgb(0, 48, 87);
     grid-row: 3 / 4;
     grid-column: 1 / 4;
+}
+
+
+#segundo, #tercero, #cuarto {
+    box-sizing: border-box;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid transparent; /* Borde transparente inicialmente */
+    border-radius: 8px;
+}
+
+#segundo:hover, #tercero:hover, #cuarto:hover {
+    border-color: rgba(0, 0, 0, 0.6); /* Oscurecer el borde al pasar el puntero */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Agregar sombra para resaltar */
 }
 
 /*Grid Responsive*/
@@ -193,6 +205,14 @@
     }
     .header .menu {
         display: inherit;
+    }
+    .btn-primary {
+        display: block !important; /* Asegura que sea visible */
+        width: 100%; /* Que ocupe todo el ancho en pantallas pequeñas */
+        margin-top: 10px; /* Agrega espacio si es necesario */
+        padding: 10px;
+        font-size: 1.2rem;
+        border-radius: 10px;
     }
 }
    

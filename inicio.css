@@ -21,19 +21,121 @@
     border: 1px solid;
 }
 
-/*Header*/
 
+/*Contenedores*/
+
+
+/*Header*/
 #primero {
     background-color: rgb(163, 163, 163);
     grid-column: 1/4;
     grid-row: 1/2;
+
 }
+
+
+/*Contenidos Pr, Sg, Tr*/
+#segundo {
+    background-color: rgb(0, 146, 70);
+    grid-row: 2/3;
+    grid-column: 1/2;
+    transition: transform 0.3s ease-in-out;
+}
+
+#tercero {
+    display: grid;
+    background-color: rgb(255, 255, 255);
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+#cuarto {
+    background-color: rgb(206, 43, 55);
+    grid-row: 2/3;
+    grid-column: 3/4;
+    transition: transform 0.3s ease-in-out;
+}
+
+/*Fin del Contenido*/
+
+
+/*Footer*/
+#quinto {
+    background-color: rgb(0, 48, 87);
+    grid-row: 3 / 4;
+    grid-column: 1 / 4;
+}
+
+
+
+
+
+/*Grid Responsivo*/
+
+
+@media(max-width: 800px) {
+    .contenedor {
+        display: grid;
+        background-color: rgb(255, 255, 220);
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 3fr 3fr 3fr 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+
+    #segundo {
+        background-color: rgb(0, 146, 70);
+        grid-row: 2/3;
+        grid-column: 1;
+    }
+
+    #tercero {
+        background-color: rgb(255, 255, 255);
+        grid-row: 3/4;
+        grid-column: 1;
+            display: grid; /* Para que sea un contenedor de tipo grid */
+    place-items: center; /* Centra el contenido */
+    width: auto; /* Deja que el ancho se ajuste al tamaño de la imagen */
+    height: auto; /* Deja que la altura se ajuste al tamaño de la imagen */
+    }
+
+    #cuarto {
+        background-color: rgb(206, 43, 55);
+        grid-row: 4/5;
+        grid-column: 1;
+    }
+
+    #segundo, #tercero, #cuarto{
+        width: 90%; /* Evita que ocupen todo el ancho */
+        margin: 10px auto; /* Centra los elementos */
+        transform: none !important;
+        /* Eliminar transformaciones */
+        position: relative;
+        /* Establece la posición relativa para evitar desplazamientos */
+        left: 0 !important;
+        /* Eliminar cualquier desplazamiento */
+        top: 0 !important;
+        /* Eliminar cualquier desplazamiento */
+        right: 0 !important;
+        /* Eliminar cualquier desplazamiento */
+        bottom: 0 !important;
+        /* Eliminar cualquier desplazamiento */
+    }
+
+    #quinto{
+        grid-row: auto;
+    }
+}
+
+
+/*Header*/
+
+
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 10%;
+    padding: 10px 5%;
 }
 
 .header .logo img {
@@ -88,6 +190,8 @@
 
 /*Fin Header*/
 
+
+
 /*Header Responsivo*/
 .header .menu {
     display: none;
@@ -109,105 +213,22 @@
     background-color: rgb(0, 48, 87);
     color: white;
     transform: scale(1.2);
+
 }
 
-/* **Responsividad** para pantallas pequeñas (menos de 800px) */
-@media (max-width: 800px) {
-    /* Grid en una sola columna */
-    .contenedor {
-        display: grid;
-        grid-template-columns: 1fr;  /* Una sola columna */
-        grid-template-rows: auto auto auto auto auto;  /* Se ajustan las filas */
-    }
-
-    /* Estilo de cada sección */
-    #segundo {
-        background-color: rgb(0, 146, 70);
-        grid-column: 1;
-        grid-row: 2/3;
-    }
-
-    #tercero {
-        background-color: rgb(255, 255, 255);
-        grid-column: 1;
-        grid-row: 3/4;
-    }
-
-    #cuarto {
-        background-color: rgb(206, 43, 55);
-        grid-column: 1/2;
-        grid-row: 4/5;
-    }
-
-    #quinto {
-        background-color: rgb(0, 48, 87);
-        grid-column: 1;
-        grid-row: 5/6;
-    }
-
-    /* Eliminar animaciones */
-    #segundo, #tercero, #cuarto {
-        transition: none;  /* Sin animaciones en pantallas pequeñas */
-    }
-
-    /* Navegación y botón en pantallas pequeñas */
-    .header .menu {
-        display: block; /* Mostrar botón de menú */
-    }
+@media screen and (max-width: 800px) {
 
     .header .nav-link,
     .btn {
-        display: none; /* Ocultar enlaces y botones de navegación */
+        display: none;
     }
 
-    /* Overlay para el menú móvil */
-    .overlay {
-        display: none;  /* Eliminar overlay */
+    .header .menu {
+        display: inherit;
     }
 }
 
-/* Estilos adicionales para el overlay (por si se usa en dispositivos grandes) */
-.header a {
-    text-decoration: none;
-}
 
-.header .overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    background-color: rgba(163, 163, 163, 0.9);
-    overflow: hidden;
-    transition: all 0.3s ease 0s;
-}
-
-.header .overlay .overlay-content {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.header .overlay a {
-    padding: 15px;
-    font-size: 36px;
-    display: block;
-    transition: all 0.3s ease 0s;
-    font-weight: 600;
-    color: rgb(0, 48, 87);
-}
-
-.header .overlay .close {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 65px;
-    color: white;
-    cursor: pointer;
-}
 
 /*Overlay del Menu*/
 
@@ -257,9 +278,10 @@
     font-size: 65px;
     color: white;
     cursor: pointer;
+
 }
 
-@media screen and (max-height: 450px) {
+@media screen and (max-height :450px) {
     .header .overlay a {
         font-size: 20px;
     }
@@ -269,19 +291,10 @@
         top: 15px;
         right: 35px;
     }
-}
 
-/*Fin Header Respónsivo*/
+}
 
 /*Breve Sintaxis*/
-
-#segundo {
-    background-color: rgb(0, 146, 70);
-    grid-row: 2/3;
-    grid-column: 1/2;
-    position: relative;
-    transition: transform 0.3s ease-in-out;
-}
 
 #segundo .item {
     display: flex;
@@ -294,39 +307,20 @@
 
 /*Imagen de la pizza*/
 
-#tercero {
-    display: grid;
-    background-color: rgb(255, 255, 255);
-    grid-area: 2 / 2 / 3 / 3;
-}
-
 .item .margarita {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
     object-fit: cover;
 }
 
 /*Sobre la página*/
-
-#cuarto {
-    background-color: rgb(206, 43, 55);
-    grid-row: 2/3;
-    grid-column: 3/4;
-    position: relative;
-    transition: transform 0.3s ease-in-out;
-}
 
 #cuarto:hover {
     transform: scale(1.2) translateX(-80px) translateY(10px);
 }
 
 /*Comienzo del Footer*/
-
-#quinto {
-    background-color: rgb(0, 48, 87);
-    grid-row: 3 / 4;
-    grid-column: 1 / 4;
-}
 
 #quinto .footer {
     color: white;
