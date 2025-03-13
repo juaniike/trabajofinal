@@ -192,44 +192,6 @@
 
 
 
-/*Header Responsivo*/
-.header .menu {
-    display: none;
-}
-
-.header .btn button,
-.header .menu button {
-    font-size: large;
-    padding: 9px 25px;
-    background-color: beige;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-}
-
-.header .btn button:hover,
-.header .menu button:hover {
-    background-color: rgb(0, 48, 87);
-    color: white;
-    transform: scale(1.2);
-
-}
-
-@media screen and (max-width: 800px) {
-
-    .header .nav-link,
-    .btn {
-        display: none;
-    }
-
-    .header .menu {
-        display: inherit;
-    }
-}
-
-
-
 /*Overlay del Menu*/
 
 .header a {
@@ -293,6 +255,45 @@
     }
 
 }
+
+/*Header Responsivo*/
+.menu {
+    display: none;
+}
+
+.header .btn button,
+.header .menu button {
+    font-size: large;
+    padding: 9px 25px;
+    background-color: beige;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.header .btn button:hover,
+.header .menu button:hover {
+    background-color: rgb(0, 48, 87);
+    color: white;
+    transform: scale(1.2);
+
+}
+
+@media screen and (max-width: 800px) {
+
+    .nav-link, .btn {
+        display: none;
+    }
+
+    .menu {
+        display: inherit;
+    }
+}
+
+
+
+
 
 /*Breve Sintaxis*/
 
