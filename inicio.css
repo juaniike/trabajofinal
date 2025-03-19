@@ -1,340 +1,325 @@
+/* Reset de estilos para eliminar márgenes y padding por defecto */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Contenedor principal con estructura de grid */
 .contenedor {
-    display: grid;
-    background-color: rgb(255, 255, 220);
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 0.5fr 3fr 0.5fr;
-    gap: 20px;
-    height: 100vh;
-    font-size: large;
-    font-weight: 900;
-}
-
-.item {
-    box-sizing: border-box;
-    padding: 10px;
-    border: 1px solid;
+  display: grid;
+  background-color: rgb(255, 255, 220);
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 0.5fr 3fr 0.5fr;
+  height: 100vh;
+  font-weight: 900; /* Texto en negrita */
 }
 
 
 /*Contenedores*/
 
-
-/*Header*/
+/* Estilos del header */
 #primero {
-    background-color: rgb(163, 163, 163);
-    grid-column: 1/4;
-    grid-row: 1/2;
+  background-color: rgb(163, 163, 163);
+  grid-column: 1/4;
+  grid-row: 1/2;
+}
 
+/* Sección izquierda */
+#segundo {
+  background-color: rgb(0, 146, 70);
+  grid-row: 2/3;
+  grid-column: 1/2;
+  transition: transform 0.3s ease-in-out; /* Transición suave */
+  position: relative;
+  padding: 2%;
+}
+
+/* Sección central */
+#tercero {
+  display: grid;
+  place-items: center; /* Centrar contenido */
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+/* Sección derecha */
+#cuarto {
+  background-color: rgb(206, 43, 55);
+  grid-row: 2/3;
+  grid-column: 3/4;
+  transition: transform 0.3s ease-in-out; /* Transición suave */
+  position: relative;
+  padding: 2%;
+}
+
+/* Márgenes para separar las secciones */
+#segundo, #tercero, #cuarto {
+  margin: 10px;
+}
+
+/* Estilos del footer */
+#quinto {
+  background-color: rgb(0, 48, 87);
+  grid-row: auto;
+  grid-column: 1 / 4; /* Ocupa todas las columnas */
+}
+
+/* Efecto de hover para resaltar las secciones laterales */
+#segundo, #cuarto {
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 10px;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid transparent; /* Borde transparente inicialmente */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+#segundo:hover, #cuarto:hover {
+  border-color: rgba(0, 0, 0, 0.6); /* Oscurecer el borde al pasar el puntero */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Agregar sombra para resaltar */
 }
 
 
-/*Contenidos Pr, Sg, Tr*/
-#segundo {
+
+/* Estilos para dispositivos con pantalla menor a 800px */
+@media (max-width: 800px) {
+  .contenedor {
+    display: grid;
+    grid-template-columns: 1fr; /* Una sola columna */
+    grid-template-rows: 0.5fr 3fr 3fr 3fr 1fr; /* Ajuste de filas */
+    text-align: center;
+    row-gap: 10px;
+  }
+
+  /* Ajuste de posiciones en móvil */
+  #segundo {
     background-color: rgb(0, 146, 70);
     grid-row: 2/3;
-    grid-column: 1/2;
-    transition: transform 0.3s ease-in-out;
-}
+    grid-column: 1;
+  }
 
-#tercero {
-    display: grid;
+  #tercero {
     background-color: rgb(255, 255, 255);
-    grid-area: 2 / 2 / 3 / 3;
-}
-
-#cuarto {
-    background-color: rgb(206, 43, 55);
-    grid-row: 2/3;
-    grid-column: 3/4;
-    transition: transform 0.3s ease-in-out;
-}
-
-/*Fin del Contenido*/
-
-
-/*Footer*/
-#quinto {
-    background-color: rgb(0, 48, 87);
-    grid-row: 3 / 4;
-    grid-column: 1 / 4;
-}
-
-
-
-
-
-/*Grid Responsivo*/
-
-
-@media(max-width: 800px) {
-    .contenedor {
-        display: grid;
-        background-color: rgb(255, 255, 220);
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.5fr 3fr 3fr 3fr 1fr;
-        gap: 20px;
-        text-align: center;
-    }
-
-    #segundo {
-        background-color: rgb(0, 146, 70);
-        grid-row: 2/3;
-        grid-column: 1;
-    }
-
-    #tercero {
-        background-color: rgb(255, 255, 255);
-        grid-row: 3/4;
-        grid-column: 1;
-            display: grid; /* Para que sea un contenedor de tipo grid */
+    grid-row: 3/4;
+    grid-column: 1;
+    display: grid; /* Para que sea un contenedor de tipo grid */
     place-items: center; /* Centra el contenido */
     width: auto; /* Deja que el ancho se ajuste al tamaño de la imagen */
     height: auto; /* Deja que la altura se ajuste al tamaño de la imagen */
-    }
+  }
 
-    #cuarto {
-        background-color: rgb(206, 43, 55);
-        grid-row: 4/5;
-        grid-column: 1;
-    }
+  #cuarto {
+    background-color: rgb(206, 43, 55);
+    grid-row: 4/5;
+    grid-column: 1;
+  }
 
-    #segundo, #tercero, #cuarto{
-        width: 90%; /* Evita que ocupen todo el ancho */
-        margin: 10px auto; /* Centra los elementos */
-        transform: none !important;
-        /* Eliminar transformaciones */
-        position: relative;
-        /* Establece la posición relativa para evitar desplazamientos */
-        left: 0 !important;
-        /* Eliminar cualquier desplazamiento */
-        top: 0 !important;
-        /* Eliminar cualquier desplazamiento */
-        right: 0 !important;
-        /* Eliminar cualquier desplazamiento */
-        bottom: 0 !important;
-        /* Eliminar cualquier desplazamiento */
-    }
-
-    #quinto{
-        grid-row: auto;
-    }
+  /* Ajuste del tamaño y posicionamiento */
+  #segundo,
+  #tercero,
+  #cuarto {
+    width: 90%; /* Que ocupen todo el ancho */
+    margin: 0 auto; /* Centra los elementos */
+    transform: none !important;
+    /* Eliminar transformaciones */
+    position: relative;
+    left: 0 !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+  }
+  #quinto {
+    grid-row: auto;
+  }
 }
 
-
-/*Header*/
-
-
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 5%;
+/* Estilos del header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
 }
 
-.header .logo img {
-    cursor: pointer;
-    height: 75px;
-    width: auto;
-    transition: all 0.3s;
+/* Estilo del logo */
+header .logo img {
+  cursor: pointer;
+  height: 75px;
+  width: auto;
+  transition: all 0.3s;
 }
 
-.header .logo img:hover {
-    transform: scale(1.2);
+header .logo img:hover {
+  transform: scale(1.1);
 }
 
-.header .nav-link li {
-    list-style: none;
-    display: inline-block;
-    padding: 0 20px;
+/* Navegación */
+header .nav-link li {
+  list-style: none;
+  display: inline-block;
+  padding: 0 20px;
 }
 
-.header .nav-link li:hover {
-    transform: scale(1.3);
+header .nav-link li:hover {
+  transform: scale(1.2);
 }
 
-.header .nav-link a {
-    font-size: x-large;
-    color: #ffffff;
-    text-decoration: none;
-    transition: all 0.3s;
+header .nav-link a {
+  font-size: x-large;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s;
 }
 
-.header .nav-link li a:hover {
-    color: #000000;
+header .nav-link li a:hover {
+  color: #000000;
 }
 
-.header .btn button {
-    margin-left: 20px;
-    font-weight: 700;
-    color: #1b3039;
-    padding: 9px 25px;
-    background: #eceff1;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
+/* Botón de acción en el header */
+header .btn button {
+  margin-left: 20px;
+  font-weight: 700;
+  color: #1b3039;
+  padding: 9px 25px;
+  background: #ffffff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
 }
 
-.header .btn button:hover {
-    background-color: #e2f1f8;
-    color: #ffbc0e;
-    transform: scale(1.1);
+header .btn button:hover {
+  background-color: #ffffff;
+  color: #ffbc0e;
+  transform: scale(1.1);
 }
 
 /*Fin Header*/
 
+/*Overlay del Menu*/
 
+header a {
+  text-decoration: none;
+}
+
+header .overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  background-color: rgba(163, 163, 163, 0.9);
+  overflow: hidden;
+  transition: all 0.3s ease 0s;
+}
+
+header .overlay .overlay-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header .overlay a {
+  padding: 15px;
+  font-size: 36px;
+  display: block;
+  transition: all 0, 3s ease 0s;
+  font-weight: 600;
+  color: rgb(0, 48, 87);
+}
+
+header .overlay a:hover,
+header .overlay a:focus {
+  color: rgb(255, 255, 220);
+}
+
+header .overlay .close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 65px;
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (max-height: 450px) {
+  header .overlay a {
+    font-size: 20px;
+  }
+
+  header .overlay .close {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
 
 /*Header Responsivo*/
-.header .menu {
-    display: none;
+.menu {
+  display: none;
 }
 
-.header .btn button,
-.header .menu button {
-    font-size: large;
-    padding: 9px 25px;
-    background-color: beige;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
+header .btn button,
+header .menu button {
+  font-size: large;
+  padding: 9px 25px;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
 }
 
-.header .btn button:hover,
-.header .menu button:hover {
-    background-color: rgb(0, 48, 87);
-    color: white;
-    transform: scale(1.2);
-
+header .btn button:hover,
+header .menu button:hover {
+  background-color: rgb(0, 48, 87);
+  color: white;
+  transform: scale(1.2);
 }
 
 @media screen and (max-width: 800px) {
+  .nav-link,
+  .btn {
+    display: none;
+  }
 
-    .header .nav-link,
-    .btn {
-        display: none;
-    }
-
-    .header .menu {
-        display: inherit;
-    }
+  .menu {
+    display: inherit;
+  }
 }
 
-
-
-/*Overlay del Menu*/
-
-.header a {
-    text-decoration: none;
-}
-
-.header .overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    background-color: rgba(163, 163, 163, 0.9);
-    overflow: hidden;
-    transition: all 0.3s ease 0s;
-}
-
-.header .overlay .overlay-content {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.header .overlay a {
-    padding: 15px;
-    font-size: 36px;
-    display: block;
-    transition: all 0, 3s ease 0s;
-    font-weight: 600;
-    color: rgb(0, 48, 87);
-}
-
-.header .overlay a:hover,
-.header .overlay a:focus {
-    color: rgb(255, 255, 220);
-}
-
-.header .overlay .close {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 65px;
-    font-size: 65px;
-    color: white;
-    cursor: pointer;
-
-}
-
-@media screen and (max-height :450px) {
-    .header .overlay a {
-        font-size: 20px;
-    }
-
-    .header .overlay .close {
-        font-size: 40px;
-        top: 15px;
-        right: 35px;
-    }
-
-}
-
-/*Breve Sintaxis*/
+/* Estilos de los elementos dentro de la sección izquierda */
 
 #segundo .item {
-    display: flex;
-    justify-content: center;
-}
-
-#segundo:hover {
-    transform: scale(1.2) translateX(80px) translateY(10px);
+  display: flex;
+  justify-content: center;
 }
 
 /*Imagen de la pizza*/
 
 .item .margarita {
-    max-width: 100%;
-    width: auto;
-    height: auto;
-    object-fit: cover;
+  max-width: 100%;
 }
 
-/*Sobre la página*/
+/*Sobre la página, Efecto de desplazamiento en hover */ 
+#segundo:hover {
+  transform: scale(1) translateX(135px);
+}
 
 #cuarto:hover {
-    transform: scale(1.2) translateX(-80px) translateY(10px);
+  transform: scale(1) translateX(-135px);
 }
 
 /*Comienzo del Footer*/
 
-#quinto .footer {
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    font-family: Arial, sans-serif;
-}
-
-.footer .footer-content p {
-    margin: 5px 0;
-}
-
-.footer .footer-content p:first-child {
-    font-weight: bold;
+footer .footer-content{
+  color: white;
+  text-align: center;
+  padding-top: 15px;
+  font-weight: bold;
 }
 
 /*Fin del footer*/

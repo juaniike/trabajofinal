@@ -10,44 +10,46 @@
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
             crossorigin="anonymous" />
         <link rel="stylesheet" href="salsas.css">
-        <title>Margherita Pizza´s</title>
+        <title>Margherita´s Pizza</title>
     </head>
 
     <body class="contenedor">
 
-        <div id="primero" class="item">
-            <header class="header">
-                <div class="logo">
-                    <img src="pizza-logo.png" alt="logo de pizza">
+        <header id="primero" class="item">
+
+            <div class="logo">
+                <img src="pizza-logo.png" alt="logo de pizza">
+            </div>
+            <nav>
+                <ul class="nav-link">
+                    <li><a class="links" href="inicio.html">Inicio</a></li>
+                    <li><a class="links" href="masas.html">Masas</a></li>
+                    <li><a class="links" href="salsas.html">Salsas</a></li>
+                    <li><a class="links" href="#">Quesos</a></li>
+
+                </ul>
+            </nav>
+
+            <a class="btn"
+                href="contacto.html"><button>Contacto</button></a>
+
+            <a onclick="openNav()" class="menu"
+                href="#"><button>Menú</button></a>
+
+            <div class="overlay" id="mobile-menu">
+                <a onclick="closeNav()" href="#" class="close"
+                    aria-label="Cerrar menú">&times;</a>
+
+                <div class="overlay-content">
+                    <a href="inicio.html">Inicio</a>
+                    <a href="masas.html">Masas</a>
+                    <a href="salsas.html">Salsas</a>
+                    <a href="#">Quesos</a>
+                    <a href="contacto.html">Contacto</a>
                 </div>
-                <nav>
-                    <ul class="nav-link">
-                        <li><a class="links" href="inicio.html">Inicio</a></li>
-                        <li><a class="links" href="masas.html">Masas</a></li>
-                        <li><a class="links" href="salsas.html">Salsas</a></li>
-                        <li><a class="links" href="quesos.html">Quesos</a></li>
+            </div>
 
-                    </ul>
-                </nav>
-                <a class="btn" href="contacto.html"><button>Contacto</button></a>
-
-                <a onclick="openNav()" href="contacto.html"
-                    class="menu"><button>Menú</button></a>
-
-                <div class="overlay" id="mobile-menu">
-                    <a onclick="closeNav()" href="javascript:void(0);"
-                        class="close" aria-label="Cerrar menú">&times;</a>
-
-                    <div class="overlay-content">
-                        <a href="inicio.html">Inicio</a>
-                        <a href="masas.html">Masas</a>
-                        <a href="salsas.html">Salsas</a>
-                        <a href="#">Quesos</a>
-                        <a href="contacto.html">Contacto</a>
-                    </div>
-                </div>
-            </header>
-        </div>
+        </header>>
 
         <div id="segundo" class="item">
             <div class="card">
@@ -152,17 +154,15 @@
 
         </div>
 
-        <div id="quinto" class="item">
-            <footer class="footer">
-                <div class="footer-content">
-                    <p>&copy; 2025 Margherita Pizza´s. Todos los derechos
-                        reservados.</p>
-                    <p>Visítanos para más recetas e historias sobre la
-                        pizza.</p>
-                </div>
-            </footer>
+        <footer id="quinto" class="item">
+            <div class="footer-content">
+                <p>&copy; 2025 Margherita Pizza´s. Todos los derechos
+                    reservados.</p>
+                <p>Visítanos para más recetas e historias sobre la pizza.</p>
+            </div>
+        </footer>
 
-        </div>
+
 
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
