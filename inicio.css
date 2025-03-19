@@ -257,6 +257,7 @@ header .overlay .close {
   }
 }
 
+<<<<<<< HEAD
 /*Header Responsivo*/
 .menu {
   display: none;
@@ -292,6 +293,112 @@ header .menu button:hover {
 }
 
 /* Estilos de los elementos dentro de la sección izquierda */
+=======
+/*Overlay del Menu*/
+
+.header a {
+    text-decoration: none;
+}
+
+.header .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(163, 163, 163, 0.9);
+    overflow: hidden;
+    transition: all 0.3s ease 0s;
+}
+
+.header .overlay .overlay-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .overlay a {
+    padding: 15px;
+    font-size: 36px;
+    display: block;
+    transition: all 0, 3s ease 0s;
+    font-weight: 600;
+    color: rgb(0, 48, 87);
+}
+
+.header .overlay a:hover,
+.header .overlay a:focus {
+    color: rgb(255, 255, 220);
+}
+
+.header .overlay .close {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 65px;
+    font-size: 65px;
+    color: white;
+    cursor: pointer;
+
+}
+
+@media screen and (max-height :450px) {
+    .header .overlay a {
+        font-size: 20px;
+    }
+
+    .header .overlay .close {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+
+}
+
+/*Header Responsivo*/
+.menu {
+    display: none;
+}
+
+.header .btn button,
+.header .menu button {
+    font-size: large;
+    padding: 9px 25px;
+    background-color: beige;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.header .btn button:hover,
+.header .menu button:hover {
+    background-color: rgb(0, 48, 87);
+    color: white;
+    transform: scale(1.2);
+
+}
+
+@media screen and (max-width: 800px) {
+
+    .nav-link, .btn {
+        display: none;
+    }
+
+    .menu {
+        display: inherit;
+    }
+}
+
+
+
+
+
+/*Breve Sintaxis*/
+>>>>>>> cc22ae4c357d0a8419ba65a6a6dee32df6b04b45
 
 #segundo .item {
   display: flex;
